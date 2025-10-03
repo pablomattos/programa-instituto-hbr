@@ -8,12 +8,37 @@ number_four = int(input())
 number_five = int(input())
 
 
-list_in_ascending_order = 0
-list_in_descending_order = 0
+if number_one > number_two:
+    number_one, number_two = number_two, number_one
 
-if number_one < number_two:
-    list_in_descending_order = number_one, number_two
+if number_two > number_three:
+    number_two, number_three = number_three, number_two
 
-if number_two < number_three:
-    list_in_ascending_order = number_one, number_two, number_three
+if number_three > number_four:
+    number_three, number_four = number_four, number_three
+
+if number_four > number_five:
+    number_four, number_five = number_five, number_four
+
+if number_one > number_two:
+    number_one, number_two = number_two, number_one
+
+if number_two > number_three:
+    number_two, number_three = number_three, number_two
+
+if number_three > number_four:
+    number_three, number_four = number_four, number_three
+
+if number_one > number_two:
+    number_one, number_two = number_two, number_one
+
+if number_two > number_three:
+    number_two, number_three = number_three, number_two
+
+if number_one > number_two:
+    number_one, number_two = number_two, number_one
+
+print(number_one, number_two, number_three, number_four, number_five)
+print(number_five, number_four, number_three, number_two, number_one)
+
 

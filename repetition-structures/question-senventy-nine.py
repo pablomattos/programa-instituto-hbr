@@ -9,7 +9,6 @@ try:
     if len(list_of_ten_numbers) == 10:
         for number in list_of_ten_numbers:
             number = int(number)
-            raise ValueError("Pablo colorado")
             if number % 2 == 0 and number >= 10 and number <= 50:
                 even_between_10_and_50 += 1
 

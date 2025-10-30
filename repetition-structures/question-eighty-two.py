@@ -7,41 +7,44 @@ quantity_even_numbers = 0
 values_within_range = 0
 values_out_of_range = 0
 all_values = 0
+proceed = True
 
-try:
-    list_of_ten_numbers = input().split()
+while proceed:
+    try:
+        list_of_ten_numbers = input().split()
 
-    if len(list_of_ten_numbers) == 10:
+        if len(list_of_ten_numbers) == 10:
 
-        for number in list_of_ten_numbers:
-            number = int(number)
-            all_values += number
+            for number in list_of_ten_numbers:
+                number = int(number)
+                all_values += number
 
-            if number >= 20 and number <= 50:
-                values_within_range += 1
+                if number >= 20 and number <= 50:
+                    values_within_range += 1
 
-                if number % 2 == 0:
-                    even_numbers.append(number)
-                    quantity_even_numbers += 1
+                    if number % 2 == 0:
+                        even_numbers.append(number)
+                        quantity_even_numbers += 1
+
+                else:
+                    values_out_of_range += 1
+            if quantity_even_numbers > 0:
+                average_of_even_values = sum(even_numbers) / quantity_even_numbers
 
             else:
-                values_out_of_range +=1
-        if quantity_even_numbers > 0:
-            average_of_even_values = sum(even_numbers) / quantity_even_numbers
+                average_of_even_values = 0
+
+            average_of_all_values = all_values / 10
+
 
         else:
-            average_of_even_values = 0
+            raise ValueError(f"You entered {len(list_of_ten_numbers)} numbers, and you need enter 10 numbers! ")
+        proceed = False
 
-        average_of_all_values = all_values / 10
-
-
+    except Exception as e:
+        print(f"Error: {e}")
     else:
-        raise ValueError("You entered the wrong quantity of numbers ")
-
-except Exception as e:
-    print(f"Error: {e}")
-else:
-    print(f"Average of even values between 20 and 50:  {average_of_even_values}")
-    print(f"Average of all values: {average_of_all_values}")
-    print(f"Quantity of values within range: {values_within_range}")
-    print(f"Quantity of values out of range: {values_out_of_range}")
+        print(f"Average of even values between 20 and 50:  {average_of_even_values}")
+        print(f"Average of all values: {average_of_all_values}")
+        print(f"Quantity of values within range: {values_within_range}")
+        print(f"Quantity of values out of range: {values_out_of_range}")

@@ -6,16 +6,16 @@ proceed = True
 
 try:
     while proceed:
-        entered_profession = input("Enter a profission (or 0 to stop):")
+        entered_profession = input("Digite uma profissão (ou 0 para parar):")
         if entered_profession == "0":
-            proceed =False
+            proceed = False
 
         for profession in entered_profession.split():
             if profession.upper() == "PROFESSOR":
                 number_of_names += 1
 
 except:
-    print("You entered a valid profession")
+    print("Você digitou uma profissão inválida!")
 
 else:
     print(f"O nome professor foi digitado {number_of_names} vezes")

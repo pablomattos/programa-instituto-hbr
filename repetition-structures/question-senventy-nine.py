@@ -16,7 +16,7 @@ try:
                 even_between_100_and_200 += 1
 
     else:
-        raise ValueError("You entered the wrong quantity of numbers ")
+        raise ValueError("Você digitou errado a quantidade de números ")
 
 except Exception as e:
     print(f"Error: {e}")

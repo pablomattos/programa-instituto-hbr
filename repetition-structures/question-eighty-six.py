@@ -12,18 +12,18 @@ valid_quantity = False
 
 while not valid_quantity:
     try:
-        quantity_of_numbers = int(input("How many numbers will you type? "))
+        quantity_of_numbers = int(input("Quantos valores você vai digitar? "))
         if quantity_of_numbers > 0:
             valid_quantity = True
         else:
-            print("Enter a quantity greater than 0.")
+            print("Digite uma quantidade maior do que zero: ")
     except ValueError:
-        print("Please enter a valid integer.")
+        print("Por favor, digite um valor inteiro: ")
 
 proceed = True
 while proceed:
     try:
-        list_of_numbers = input(f"Enter {quantity_of_numbers} numbers: ").split()
+        list_of_numbers = input(f"Digite {quantity_of_numbers} números: ").split()
 
         if len(list_of_numbers) == quantity_of_numbers:
             new_list_of_numbers = []
@@ -33,7 +33,7 @@ while proceed:
                 try:
                     new_list_of_numbers.append(int(number))
                 except ValueError:
-                    print("Please enter only valid integers.")
+                    print("Por favor, digite somente valores inteiros: ")
                     all_valid = False
 
                     i = len(list_of_numbers)
@@ -58,20 +58,20 @@ while proceed:
                 else:
                     average_of_values_between_10_and_100 = 0
 
-                print(f"\nHighest value: {highest_value}")
-                print(f"Lowest value: {lowest_value}")
-                print(f"Sum of values: {sum_of_values}")
-                print(f"Average of values: {average_of_values:.2f}")
-                print(f"Quantity of values greater than 20: {number_of_values_greater_than_20}")
-                print(f"Percent of values greater than 10: {percent_of_values_greater_than_10:.2f}%")
-                print(f"Average of values between 10 and 100: {average_of_values_between_10_and_100:.2f}")
+                print(f"\nMaior valor: {highest_value}")
+                print(f"Menor valor: {lowest_value}")
+                print(f"Soma dos valores: {sum_of_values}")
+                print(f"Média dos valores: {average_of_values:.2f}")
+                print(f"Quantidade dos valores maior do que 20: {number_of_values_greater_than_20}")
+                print(f"Percentual dos valores maiores do que 10: {percent_of_values_greater_than_10:.2f}%")
+                print(f"Média dos valores entre 10 e 100: {average_of_values_between_10_and_100:.2f}")
 
                 proceed = False
             else:
-                print("Try entering the numbers again.")
+                print("Tente digitar os números novamente: ")
 
         else:
-            print(f"You entered {len(list_of_numbers)} numbers, you need to enter {quantity_of_numbers} numbers!")
+            print(f"Você digitou {len(list_of_numbers)} números, você precisa digitar {quantity_of_numbers} números: ")
 
     except Exception as e:
         print(f"Error: {e}")

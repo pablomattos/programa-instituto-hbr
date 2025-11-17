@@ -64,9 +64,25 @@ class Employee:
         try:
             if isinstance(month,int):
                 if not 1 <= month <= 12:
-                    print()
+                    print("Mês inválido")
+        except Exception as error:
+            raise error
+
         weeks = [4, 4.5, 4, 4, 4, 4, 4, 4, 4.5, 4.5, 4, 4.5]
         for m in range(weeks):
-            m == month
+            i = weeks.index(m)
+            if month == (i + 1):
+                total_salary = weeks[i] * self.work_regime * self.hourly_rate
+                if total_salary <= 5000:
+                    net_salary = total_salary - (total_salary * 0.08) - (total_salary * 0.01)
+                elif total_salary <= 5000:
+                    net_salary = total_salary - (total_salary * 0.08) - (total_salary * 0.01)
+                elif total_salary <= 7500:
+                    net_salary = total_salary - (total_salary * 0.08) - (total_salary * 0.125) - (total_salary * 0.01)
+                elif total_salary <= 50000:
+                    net_salary = total_salary - (total_salary * 0.08) - (total_salary * 0.275) - (total_salary * 0.01)
+                else:
+                    net_salary = total_salary - (total_salary * 0.08) - (total_salary * 0.375) - (total_salary * 0.01)
+
 
 
